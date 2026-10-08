@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Tools Directory 2026 — Google, Meta, OpenAI, Anthropic & More</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f7f5;
+    --card:#ffffff;
+    --text:#1c1c1a;
+    --muted:#65635c;
+    --border:#e6e4dd;
+    --accent:#b45309;
+    --free:#166534;
+    --free-bg:#dcfce7;
+    --paid:#9a3412;
+    --paid-bg:#ffedd5;
+    --freemium:#1d4ed8;
+    --freemium-bg:#dbeafe;
+    --header-grad-1:#1c1c1a;
+    --header-grad-2:#3a3833;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#151513;
+      --card:#1f1f1c;
+      --text:#f0efe9;
+      --muted:#a7a498;
+      --border:#33322c;
+      --free-bg:#12321f;
+      --free:#4ade80;
+      --paid-bg:#3a1f0f;
+      --paid:#fb923c;
+      --freemium-bg:#0f2444;
+      --freemium:#93c5fd;
+      --header-grad-1:#0c0c0b;
+      --header-grad-2:#2a2925;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#151513;
+    --card:#1f1f1c;
+    --text:#f0efe9;
+    --muted:#a7a498;
+    --border:#33322c;
+    --free-bg:#12321f;
+    --free:#4ade80;
+    --paid-bg:#3a1f0f;
+    --paid:#fb923c;
+    --freemium-bg:#0f2444;
+    --freemium:#93c5fd;
+    --header-grad-1:#0c0c0b;
+    --header-grad-2:#2a2925;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top: env(safe-area-inset-top, 0px);}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family: 'Segoe UI', 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+    line-height:1.55;
+  }
+  header.hero{
+    background: linear-gradient(135deg, var(--header-grad-1), var(--header-grad-2));
+    color:#fff;
+    padding:2.4rem 1.2rem 2rem;
+    text-align:center;
+  }
+  header.hero h1{
+    margin:0 0 .4rem;
+    font-size: clamp(1.4rem, 4vw, 2.1rem);
+  }
+  header.hero p{
+    margin:0;
+    color:#d8d6cc;
+    font-size: .95rem;
+    max-width: 640px;
+    margin-inline:auto;
+  }
+  header.hero .count{
+    margin-top:.6rem;
+    font-size:.85rem;
+    color:#fcd34d;
+    font-weight:700;
+  }
+  .legend{
+    display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; margin-top:1rem;
+  }
+  .legend span{
+    font-size:.75rem; padding:.25rem .6rem; border-radius:999px; font-weight:600;
+  }
+  .tag-free{background:var(--free-bg); color:var(--free);}
+  .tag-paid{background:var(--paid-bg); color:var(--paid);}
+  .tag-freemium{background:var(--freemium-bg); color:var(--freemium);}
+
+  main{
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+  }
+  nav.toc{
+    display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    background: var(--bg);
+    padding: .6rem 0;
+    z-index: 5;
+  }
+  nav.toc a{
+    text-decoration:none;
+    color:var(--text);
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:.45rem .9rem;
+    border-radius:999px;
+    font-size:.85rem;
+    font-weight:600;
+  }
+  section.company{
+    margin-bottom: 2.5rem;
+  }
+  .company-head{
+    display:flex; align-items:center; gap:.7rem; margin-bottom:.9rem;
+  }
+  .icon-badge{
+    width:44px; height:44px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.3rem; color:#fff; flex-shrink:0;
+  }
+  .company-head h2{
+    margin:0; font-size:1.3rem;
+  }
+  .company-head .sub{
+    margin:0; font-size:.82rem; color:var(--muted);
+  }
+  .card-grid{
+    display:grid;
+    gap:.8rem;
+  }
+  .tool-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:.9rem 1rem;
+    display:grid;
+    grid-template-columns: 28px 40px 1fr;
+    gap:.6rem;
+    align-items:start;
+  }
+  .sno{
+    font-weight:700;
+    color:var(--muted);
+    font-size:.85rem;
+    padding-top:.55rem;
+  }
+  .logo-wrap{ padding-top:.1rem; }
+  .tool-logo{
+    width:40px; height:40px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.25rem;
+    flex-shrink:0;
+  }
+  .tool-title-row{
+    display:flex; align-items:center; flex-wrap:wrap; gap:.5rem; margin-bottom:.3rem;
+  }
+  .tool-title-row h3{
+    margin:0; font-size:1.02rem;
+  }
+  .pill{
+    font-size:.68rem; font-weight:700; padding:.15rem .55rem; border-radius:999px; white-space:nowrap;
+  }
+  .tool-card p.feat{
+    margin:.15rem 0 0; font-size:.89rem; color:var(--muted);
+  }
+  a.visit-link{
+    display:inline-block;
+    margin-top:.55rem;
+    font-size:.8rem;
+    font-weight:600;
+    color:var(--accent);
+    text-decoration:none;
+    word-break:break-all;
+  }
+  a.visit-link:hover{ text-decoration:underline; }
+  .creator-credit{
+    display:flex; align-items:center; justify-content:center; gap:.6rem;
+    margin-top:.6rem;
+  }
+  .creator-credit img{
+    width:34px; height:34px; border-radius:50%; object-fit:cover;
+    border:2px solid var(--accent);
+  }
+  .creator-credit span{
+    font-size:.85rem; color:var(--muted); font-weight:600;
+  }
+  .thanks{margin:.6rem 0 0; font-size:.85rem; color:var(--muted); font-weight:600;}
+  .tag-new{background:#fee2e2; color:#b91c1c;}
+  footer{
+    text-align:center; color:var(--muted); font-size:.78rem; padding: 1rem 1rem 2rem;
+  }
+  @media (max-width: 420px){
+    .tool-card{ grid-template-columns: 24px 34px 1fr; }
+    .tool-logo{ width:34px; height:34px; font-size:1.05rem; }
+  }
+
+  .locked-blur{
+    filter: blur(14px);
+    pointer-events: none;
+    user-select: none;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .lock-overlay{
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(10,10,10,0.72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    padding-top: calc(1.2rem + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px));
+  }
+  .lock-box{
+    background: var(--card);
+    color: var(--text);
+    border-radius: 18px;
+    padding: 2rem 1.6rem;
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .lock-emoji{ font-size: 2.4rem; margin-bottom:.4rem; }
+  .lock-box h2{ margin:.2rem 0 .6rem; font-size: 1.15rem; }
+  .lock-box p{ margin:.3rem 0; font-size:.88rem; color:var(--muted); }
+  .lock-hint{ font-style: italic; font-size:.8rem !important; }
+  #lockForm{ display:flex; flex-direction:column; gap:.7rem; margin-top:1.1rem; }
+  #lockPassword{
+    padding:.7rem .9rem;
+    border-radius:10px;
+    border:1px solid var(--border);
+    font-size:1rem;
+    background: var(--bg);
+    color: var(--text);
+  }
+  #lockForm button{
+    padding:.7rem .9rem;
+    border-radius:10px;
+    border:none;
+    background: var(--accent);
+    color:#fff;
+    font-weight:700;
+    font-size:.95rem;
+    cursor:pointer;
+  }
+  #lockForm button:hover{ opacity:.9; }
+  .lock-error{
+    color:#dc2626 !important;
+    font-weight:600;
+    min-height: 1.2em;
+  }
+
+  .disc-list{ margin:0; padding-left:1.2rem; color:var(--muted); font-size:.9rem; line-height:1.7; }
+  .disc-list strong{ color:var(--text); }
+
+/* ===== Pro redesign ===== */
+:root{--bg:#f3f5fb;--card:#fff;--text:#12142b;--muted:#5b6080;--border:#e1e5f2;--accent:#4f46e5;--accent2:#06b6d4;--shadow:0 1px 2px rgba(18,20,43,.05),0 8px 24px -12px rgba(18,20,43,.12)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0b0d1c;--card:#14172d;--text:#eef0ff;--muted:#9aa0c4;--border:#262a4a;--accent:#8b87ff;--accent2:#22d3ee;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7)}}
+:root[data-theme="dark"]{--bg:#0b0d1c;--card:#14172d;--text:#eef0ff;--muted:#9aa0c4;--border:#262a4a;--accent:#8b87ff;--accent2:#22d3ee;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.7)}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans','Segoe UI','Noto Sans Devanagari',system-ui,sans-serif}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:1000}
+header.hero{position:relative;overflow:hidden;background:#0c0f2b;padding:3.4rem 1.2rem 2.6rem}
+header.hero::before,header.hero::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;filter:blur(80px);opacity:.55;animation:drift 14s ease-in-out infinite alternate}
+header.hero::before{background:#4f46e5;top:-160px;left:-100px}
+header.hero::after{background:#06b6d4;bottom:-200px;right:-120px;animation-delay:-7s}
+header.hero>*{position:relative;z-index:1}
+@keyframes drift{to{transform:translate(90px,50px) scale(1.15)}}
+header.hero h1{font-size:clamp(1.7rem,5vw,2.8rem);font-weight:800;letter-spacing:-.02em;background:linear-gradient(100deg,#fff 20%,#a5f3fc 50%,#fff 80%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+header.hero p{color:#cfd3f5;font-size:1rem;line-height:1.7}
+header.hero .count{display:inline-block;margin-top:1rem;padding:.35rem .9rem;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:.85rem}
+.legend span{border:1px solid transparent}
+.toolbar{max-width:980px;margin:0 auto 1.4rem;display:flex;flex-wrap:wrap;gap:.7rem;align-items:center}
+.toolbar input{flex:1 1 240px;padding:.8rem 1rem .8rem 2.6rem;border-radius:14px;border:1px solid var(--border);background:var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%239aa0c4' stroke-width='2' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") no-repeat .85rem center;color:var(--text);font:inherit;font-size:.95rem;box-shadow:var(--shadow);transition:border-color .2s,box-shadow .2s}
+.toolbar input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap}
+.chip{border:1px solid var(--border);background:var(--card);color:var(--muted);font:inherit;font-size:.82rem;font-weight:600;padding:.5rem .95rem;border-radius:999px;cursor:pointer;transition:all .2s}
+.chip:hover{color:var(--text);border-color:var(--accent)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.chip:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#shown{width:100%;font-size:.8rem;color:var(--muted)}
+#empty{display:none;text-align:center;padding:3rem 1rem;color:var(--muted)}
+nav.toc{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;scrollbar-width:none;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--border);padding:.7rem .3rem}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{white-space:nowrap;box-shadow:var(--shadow);transition:transform .2s,background .2s,color .2s}
+nav.toc a:hover{background:var(--accent);color:#fff;border-color:var(--accent);transform:translateY(-2px)}
+.company-head{padding-bottom:.8rem;border-bottom:1px solid var(--border);margin-bottom:1.1rem}
+.icon-badge{border-radius:14px;box-shadow:0 8px 18px -8px rgba(0,0,0,.35)}
+.card-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr))}
+.tool-card{border-radius:16px;box-shadow:var(--shadow);position:relative;transition:transform .25s ease,border-color .25s,box-shadow .25s}
+.tool-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 34px -14px color-mix(in srgb,var(--accent) 55%,transparent)}
+.tool-card:hover .tool-logo{transform:rotate(-6deg) scale(1.1)}
+.tool-logo{transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.sno{color:var(--accent);font-variant-numeric:tabular-nums}
+a.visit-link{display:inline-flex;max-width:100%;padding:.3rem .65rem;border-radius:8px;background:color-mix(in srgb,var(--accent) 10%,transparent);transition:background .2s,color .2s}
+a.visit-link:hover{background:var(--accent);color:#fff;text-decoration:none}
+.tag-new{animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 5px rgba(239,68,68,.18)}}
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+#top{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:50%;border:none;background:var(--accent);color:#fff;font-size:1.2rem;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(10px);transition:all .3s;z-index:20}
+#top.on{opacity:1;pointer-events:auto;transform:none}
+.thanks{font-size:.95rem;color:var(--text)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* ===== Premium intro ===== */
+html.intro-on,html.intro-on body{overflow:hidden}
+#intro{position:fixed;inset:0;z-index:3000;background:#05060f;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;overflow:hidden;transition:opacity .8s ease,transform .8s cubic-bezier(.6,0,.2,1),filter .8s}
+#intro.leave{opacity:0;transform:scale(1.06);filter:blur(10px);pointer-events:none}
+#intro.gone{display:none}
+#intro .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(circle at 50% 45%,#000 0,transparent 65%);mask-image:radial-gradient(circle at 50% 45%,#000 0,transparent 65%);opacity:0;animation:fadein 1.2s .1s forwards}
+#intro .blob{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(110px);opacity:0;animation:fadein 1.6s .2s forwards,float 9s ease-in-out infinite alternate}
+#intro .b1{background:#4338ca;top:-25vmax;left:-15vmax;--o:.5}
+#intro .b2{background:#0891b2;bottom:-30vmax;right:-18vmax;--o:.4;animation-delay:.2s,-4s}
+.tile{position:relative;width:116px;height:116px;border-radius:32px;opacity:0;transform:scale(.7);filter:blur(14px);animation:tilein 1.1s cubic-bezier(.2,.8,.2,1) .35s forwards;box-shadow:0 30px 80px -20px rgba(99,102,241,.7)}
+.tile::before{content:"";position:absolute;inset:-1.5px;border-radius:33px;background:conic-gradient(from 0deg,transparent 0 55%,#22d3ee 75%,#818cf8 90%,transparent);animation:spin 3.2s linear infinite}
+.face{position:absolute;inset:1.5px;border-radius:31px;background:linear-gradient(150deg,#1c2060,#0a0c26 70%);display:grid;place-items:center;overflow:hidden}
+.face::after{content:"";position:absolute;top:-20%;bottom:-20%;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-18deg);animation:sweep 1.1s ease-in-out 1.7s forwards}
+.face svg{width:62%;height:62%;overflow:visible}
+.spark{fill:url(#lg);fill-opacity:0;stroke:url(#lg);stroke-width:2.2;stroke-linejoin:round;stroke-dasharray:260;stroke-dashoffset:260;animation:draw 1.1s cubic-bezier(.6,0,.2,1) .9s forwards,fillin .7s ease 1.7s forwards}
+.node{fill:#a5f3fc;opacity:0;animation:fadein .5s forwards}
+.wm{margin:2.1rem 0 0;display:flex;gap:.55em;align-items:baseline;font-size:clamp(1.5rem,5.4vw,2.4rem);letter-spacing:.01em;position:relative}
+.wm span{display:block;overflow:hidden;padding:.12em 0}
+.wm i{display:block;font-style:normal;transform:translateY(115%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+.wm .a i{font-weight:800;animation-delay:1.55s}
+.wm .b i{font-weight:300;color:#c7cdf5;animation-delay:1.7s}
+.rule{height:1px;width:0;margin:1rem 0 .9rem;background:linear-gradient(90deg,transparent,#818cf8,#22d3ee,transparent);animation:rule 1s cubic-bezier(.6,0,.2,1) 2s forwards}
+.tag{margin:0;color:#8f98cf;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;opacity:0;transform:translateY(8px);animation:tagin .8s ease 2.2s forwards}
+.meter{position:absolute;bottom:calc(9% + env(safe-area-inset-bottom,0px));width:min(280px,64vw);display:flex;align-items:center;gap:.8rem;font-size:.72rem;color:#8f98cf;font-variant-numeric:tabular-nums;opacity:0;animation:fadein .6s .6s forwards}
+.meter b{flex:1;height:2px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
+.meter b i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6366f1,#22d3ee)}
+#skip{position:absolute;top:calc(1rem + env(safe-area-inset-top,0px));right:1rem;background:none;border:1px solid rgba(255,255,255,.16);color:#b6bdea;font:inherit;font-size:.75rem;letter-spacing:.08em;padding:.45rem .95rem;border-radius:999px;cursor:pointer;transition:all .2s}
+#skip:hover{color:#fff;background:rgba(255,255,255,.1)}
+@keyframes tilein{to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fillin{to{fill-opacity:1;stroke-width:0}}
+@keyframes sweep{to{left:130%}}
+@keyframes rise{to{transform:none}}
+@keyframes rule{to{width:min(220px,50vw)}}
+@keyframes tagin{to{opacity:1;transform:none}}
+@keyframes float{to{transform:translate(6vmax,4vmax) scale(1.12)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fadein{to{opacity:var(--o,1)}}
+@keyframes up{from{opacity:0;transform:translateY(28px);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
+.intro-on header.hero>*{opacity:0}
+.ready header.hero>*{animation:up .9s cubic-bezier(.2,.8,.2,1) both}
+.ready header.hero>:nth-child(2){animation-delay:.12s}
+.ready header.hero>:nth-child(3){animation-delay:.24s}
+.ready header.hero>:nth-child(4){animation-delay:.36s}
+.tool-card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.tool-card:hover::after{opacity:1}
+@media (prefers-reduced-motion:reduce){#intro{display:none}.intro-on header.hero>*{opacity:1}}
+</style>
+</head>
+<body>
+<div id="intro" aria-hidden="true">
+  <div class="grid"></div><div class="blob b1"></div><div class="blob b2"></div>
+  <button id="skip" type="button">Skip</button>
+  <div class="tile"><div class="face">
+    <svg viewBox="0 0 100 100"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a5b4fc"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+      <path class="spark" d="M50 8C53 36 64 47 92 50C64 53 53 64 50 92C47 64 36 53 8 50C36 47 47 36 50 8Z"/>
+      <circle class="node" cx="82" cy="18" r="3.2" style="animation-delay:2.1s"/><circle class="node" cx="18" cy="82" r="2.4" style="animation-delay:2.3s"/>
+    </svg></div></div>
+  <h1 class="wm"><span class="a"><i>AI Tools</i></span><span class="b"><i>Directory</i></span></h1>
+  <div class="rule"></div>
+  <p class="tag">Curated · Verified · 2026</p>
+  <div class="meter"><b><i id="bar"></i></b><em id="pct" style="font-style:normal">0%</em></div>
+</div>
+
+
+<div id="lockOverlay" class="lock-overlay">
+  <div class="lock-box">
+    <div class="lock-emoji">🔒</div>
+    <h2>AI Tools Directory — Premium Access</h2>
+    <p>101+ AI tools ki poori list, direct links ke saath. Access unlock karne ke liye password daalein.</p>
+    <p class="lock-hint">Payment karne ke baad aapko password diya jayega.</p>
+    <form id="lockForm" autocomplete="off">
+      <input type="password" id="lockPassword" placeholder="Password daalein" autocomplete="off" />
+      <button type="submit">Unlock Karein 🔓</button>
+    </form>
+    <p id="lockError" class="lock-error"></p>
+  </div>
+</div>
+
+<div id="progress"></div>
+<div id="lockedContent" class="locked-blur">
+
+<header class="hero">
+  <h1>🤖 AI Tools Directory — 2026</h1>
+  <p>Every active tool, big and small, from Google, Meta, OpenAI, Anthropic and the world's other leading AI players, with serial number, icon, detailed features, Free/Paid status and a direct link.</p>
+  <div class="count">Total 85 verified AI Tools Listed</div>
+  <div class="legend">
+    <span class="tag-free">FREE</span>
+    <span class="tag-freemium">FREEMIUM</span>
+    <span class="tag-paid">PAID</span>
+  </div>
+</header>
+
+<main>
+  <nav class="toc">
+    <a href="#google">🔵 Google</a>
+    <a href="#meta">🔷 Meta</a>
+    <a href="#openai">⚫ OpenAI</a>
+    <a href="#anthropic">🟠 Anthropic</a>
+    <a href="#microsoft">🟩 Microsoft</a>
+    <a href="#others">🌐 Baaki</a>
+    <a href="#discontinued">✖ Band Tools</a>
+  </nav>
+
+  <div class="toolbar">
+    <input id="q" type="search" placeholder="Search tools, e.g. video, coding, free..." aria-label="Search tools" autocomplete="off">
+    <div class="chips" role="group" aria-label="Filter by price">
+      <button class="chip on" data-f="all">All</button><button class="chip" data-f="free">Free</button><button class="chip" data-f="freemium">Freemium</button><button class="chip" data-f="paid">Paid</button>
+    </div>
+    <div id="shown"></div>
+  </div>
+  <div id="empty">No tools match your search. Try a different word or clear the filter.</div>
+
+
+  <section class="company" id="google">
+    <div class="company-head">
+      <div class="icon-badge" style="background:#4285F4;">G</div>
+      <div>
+        <h2>Google AI Tools</h2>
+        <p class="sub">Gemini ecosystem — chat, research, video, coding, workspace me AI</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="tool-card"><div class="sno">1</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">💬</div></div><div>
+        <div class="tool-title-row"><h3>Gemini App</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Google ka main AI chatbot — text, voice, image aur file analysis sab ek jagah. Google apps ke saath deep integration hai. Free tier me daily limit hai, jabki Google AI Pro/Ultra plans me zyada limit aur advanced models milte hai.</p>
+        <a class="visit-link" href="https://gemini.google.com/" target="_blank" rel="noopener">https://gemini.google.com/</a>
+      </div></div><div class="tool-card"><div class="sno">2</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🔎</div></div><div>
+        <div class="tool-title-row"><h3>Gemini Deep Research</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Agentic research mode jo internet par (aur chaho to Gmail/Drive par bhi) kai sources dekh kar detailed, multi-page report bana deta hai. Competitor analysis ya kisi bhi topic par gehri jaankari ke liye best hai.</p>
+        <a class="visit-link" href="https://gemini.google/overview/deep-research/" target="_blank" rel="noopener">https://gemini.google/overview/deep-research/</a>
+      </div></div><div class="tool-card"><div class="sno">3</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🖼️</div></div><div>
+        <div class="tool-title-row"><h3>Gemini Canvas</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Apne ideas aur Deep Research reports ko interactive apps, games, quizzes ya webpages me badal deta hai. Sirf prompt likho, Canvas khud code bana kar shareable version tayaar kar deta hai.</p>
+        <a class="visit-link" href="https://gemini.google/overview/canvas/" target="_blank" rel="noopener">https://gemini.google/overview/canvas/</a>
+      </div></div><div class="tool-card"><div class="sno">4</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">📓</div></div><div>
+        <div class="tool-title-row"><h3>Gemini Notebook (pehle NotebookLM)</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Apne documents, PDFs ya YouTube links upload karo aur AI unhi par based research partner ban jata hai, citations ke saath. Audio/video overviews, mind maps aur quizzes bhi banata hai. July 2026 me iska naam NotebookLM se badal kar Gemini Notebook ho gaya, product wahi hai.</p>
+        <a class="visit-link" href="https://notebooklm.google.com/" target="_blank" rel="noopener">https://notebooklm.google.com/</a>
+      </div></div><div class="tool-card"><div class="sno">5</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🍌</div></div><div>
+        <div class="tool-title-row"><h3>Nano Banana (Image Generation)</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Gemini ke andar built-in image generation aur editing model. Simple bhasha me bolo aur wo image banata ya edit karta hai, reference images ke saath character consistent rakhta hai.</p>
+        <a class="visit-link" href="https://gemini.google/overview/image-generation/" target="_blank" rel="noopener">https://gemini.google/overview/image-generation/</a>
+      </div></div><div class="tool-card"><div class="sno">6</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🎬</div></div><div>
+        <div class="tool-title-row"><h3>Veo (Video Generation)</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Google ka text-to-video model jo cinematic clips synced audio ke saath banata hai. Full access Google AI Pro/Ultra subscription ke saath milta hai.</p>
+        <a class="visit-link" href="https://gemini.google/overview/video-generation/" target="_blank" rel="noopener">https://gemini.google/overview/video-generation/</a>
+      </div></div><div class="tool-card"><div class="sno">7</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🎞️</div></div><div>
+        <div class="tool-title-row"><h3>Flow</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Google ka unified AI creative studio (flow.google) jisme image aur video dono banate aur edit karte ho. Whisk aur ImageFX ab isi me merge ho chuke hai. Timeline, camera controls aur Veo/Nano Banana models ke saath, roz kuch free credits milte hai.</p>
+        <a class="visit-link" href="https://flow.google/" target="_blank" rel="noopener">https://flow.google/</a>
+      </div></div><div class="tool-card"><div class="sno">8</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🎵</div></div><div>
+        <div class="tool-title-row"><h3>Flow Music</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Google ka AI music studio (pehle ProducerAI/Riffusion). Text prompt se poore gaane banata hai, section-by-section edit aur remix karne deta hai, Lyria 3 model par based. Basic generation free hai.</p>
+        <a class="visit-link" href="https://flowmusic.google/" target="_blank" rel="noopener">https://flowmusic.google/</a>
+      </div></div><div class="tool-card"><div class="sno">9</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">📣</div></div><div>
+        <div class="tool-title-row"><h3>Pomelli</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Apni website ka link do, Pomelli tumhare brand ki Business DNA (tone, colors, fonts) samajh kar on-brand social posts, ads aur product photoshoot images banata hai. Abhi public beta me bilkul free hai, English me kaam karta hai.</p>
+        <a class="visit-link" href="https://labs.google/pomelli" target="_blank" rel="noopener">https://labs.google/pomelli</a>
+      </div></div><div class="tool-card"><div class="sno">10</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🖌️</div></div><div>
+        <div class="tool-title-row"><h3>Stitch</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Text, sketch ya wireframe se professional UI design banata hai aur saath me frontend code (HTML/CSS) tatha Figma export bhi deta hai. Google Labs ka free experiment.</p>
+        <a class="visit-link" href="https://stitch.withgoogle.com/" target="_blank" rel="noopener">https://stitch.withgoogle.com/</a>
+      </div></div><div class="tool-card"><div class="sno">11</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">⚙️</div></div><div>
+        <div class="tool-title-row"><h3>Opal</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Plain English me batao ki kaisa app chahiye, Opal visual workflow bana kar poora AI mini-app tayaar kar deta hai, jise ek link se share bhi kar sakte ho. Koi coding nahi chahiye.</p>
+        <a class="visit-link" href="https://opal.google/" target="_blank" rel="noopener">https://opal.google/</a>
+      </div></div><div class="tool-card"><div class="sno">12</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🧩</div></div><div>
+        <div class="tool-title-row"><h3>Mixboard</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">AI-powered concepting board jahan images aur text daal kar ideas explore karte ho, natural language se images edit karte ho. Home decor, event themes ya product ideas ke liye kaam ka hai. Abhi mainly US me beta me hai.</p>
+        <a class="visit-link" href="https://labs.google.com/mixboard/welcome" target="_blank" rel="noopener">https://labs.google.com/mixboard/welcome</a>
+      </div></div><div class="tool-card"><div class="sno">13</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">📚</div></div><div>
+        <div class="tool-title-row"><h3>Learn Your Way</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Textbook ya PDF ko interactive lesson me badal deta hai, jisme audio lesson, mind map aur quizzes hote hai. Tumhare interest ke hisaab se examples badalta hai.</p>
+        <a class="visit-link" href="https://learnyourway.withgoogle.com/" target="_blank" rel="noopener">https://learnyourway.withgoogle.com/</a>
+      </div></div><div class="tool-card"><div class="sno">14</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🗂️</div></div><div>
+        <div class="tool-title-row"><h3>Disco (GenTabs)</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Google Labs ka experimental browser jo tumhare khule tabs ko ek custom mini-app (GenTab) me badal deta hai, jaise 10 travel tabs se ek trip planner. Abhi macOS par waitlist ke saath.</p>
+        <a class="visit-link" href="https://labs.google/disco" target="_blank" rel="noopener">https://labs.google/disco</a>
+      </div></div><div class="tool-card"><div class="sno">15</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">📧</div></div><div>
+        <div class="tool-title-row"><h3>CC (AI Email Assistant)</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Gmail, Calendar aur Drive se jud kar har subah Your Day Ahead briefing email bhejta hai, aur email reply se hi tasks aur drafts bhi bana deta hai. Abhi US/Canada me waitlist ke saath.</p>
+        <a class="visit-link" href="https://labs.google/cc" target="_blank" rel="noopener">https://labs.google/cc</a>
+      </div></div><div class="tool-card"><div class="sno">16</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🧪</div></div><div>
+        <div class="tool-title-row"><h3>Google AI Studio</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Developers ke liye — Gemini models test karo, prompts likho aur simple apps prototype karke deploy karo. Yahi se Gemini API key bhi milti hai.</p>
+        <a class="visit-link" href="https://aistudio.google.com/" target="_blank" rel="noopener">https://aistudio.google.com/</a>
+      </div></div><div class="tool-card"><div class="sno">17</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🚀</div></div><div>
+        <div class="tool-title-row"><h3>Google Antigravity</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Agent-first coding IDE jahan AI agents planning, coding aur browser testing khud karte hai aur tum unhe manage karte ho. Free tier me daily requests limited hai.</p>
+        <a class="visit-link" href="https://antigravity.google/" target="_blank" rel="noopener">https://antigravity.google/</a>
+      </div></div><div class="tool-card"><div class="sno">18</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🤖</div></div><div>
+        <div class="tool-title-row"><h3>Jules</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Google ka autonomous coding agent jo tumhare GitHub repo par bugs fix karta hai, features likhta hai aur pull request tayaar karta hai.</p>
+        <a class="visit-link" href="https://jules.google/" target="_blank" rel="noopener">https://jules.google/</a>
+      </div></div><div class="tool-card"><div class="sno">19</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">⌨️</div></div><div>
+        <div class="tool-title-row"><h3>Gemini CLI</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Terminal se Gemini use karne ka open-source command-line tool, coding aur automation tasks ke liye. Free tier ke saath aata hai.</p>
+        <a class="visit-link" href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener">https://github.com/google-gemini/gemini-cli</a>
+      </div></div><div class="tool-card"><div class="sno">20</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🛠️</div></div><div>
+        <div class="tool-title-row"><h3>Gemini Code Assist</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">VS Code aur JetBrains jaise editors ke andar AI code completion, chat aur code generation deta hai.</p>
+        <a class="visit-link" href="https://codeassist.google/" target="_blank" rel="noopener">https://codeassist.google/</a>
+      </div></div><div class="tool-card"><div class="sno">21</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">📨</div></div><div>
+        <div class="tool-title-row"><h3>Gemini in Gmail</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Inbox ke andar email draft karo, lambi threads summarize karo aur plain English me apni inbox se sawal poocho.</p>
+        <a class="visit-link" href="https://workspace.google.com/products/gmail/" target="_blank" rel="noopener">https://workspace.google.com/products/gmail/</a>
+      </div></div><div class="tool-card"><div class="sno">22</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">📄</div></div><div>
+        <div class="tool-title-row"><h3>Gemini in Docs, Sheets, Slides</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Docs me writing help, Sheets me data analysis aur formulas, Slides me presentation generation, sab Workspace ke andar built-in Gemini se.</p>
+        <a class="visit-link" href="https://workspace.google.com/solutions/ai/" target="_blank" rel="noopener">https://workspace.google.com/solutions/ai/</a>
+      </div></div><div class="tool-card"><div class="sno">23</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🎥</div></div><div>
+        <div class="tool-title-row"><h3>Google Vids</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Workspace ka AI video editor — prompt ya Doc/Slides se storyboard, voiceover aur stock footage ke saath video bana deta hai.</p>
+        <a class="visit-link" href="https://workspace.google.com/products/vids/" target="_blank" rel="noopener">https://workspace.google.com/products/vids/</a>
+      </div></div><div class="tool-card"><div class="sno">24</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🦙</div></div><div>
+        <div class="tool-title-row"><h3>Gemma</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Google ka open-weight model family jise developers apne server par host aur fine-tune kar sakte hai. Research aur custom apps ke liye free.</p>
+        <a class="visit-link" href="https://ai.google.dev/gemma" target="_blank" rel="noopener">https://ai.google.dev/gemma</a>
+      </div></div><div class="tool-card"><div class="sno">25</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">🔍</div></div><div>
+        <div class="tool-title-row"><h3>AI Mode (Google Search)</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Google Search ke andar conversational AI mode jo follow-up sawalon ke saath detailed AI answers deta hai.</p>
+        <a class="visit-link" href="https://search.google/ways-to-search/ai-mode/" target="_blank" rel="noopener">https://search.google/ways-to-search/ai-mode/</a>
+      </div></div><div class="tool-card"><div class="sno">26</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">📷</div></div><div>
+        <div class="tool-title-row"><h3>Google Lens</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Camera ya screenshot se kisi bhi cheez ko search karo, homework solve karo ya text translate karo.</p>
+        <a class="visit-link" href="https://lens.google/" target="_blank" rel="noopener">https://lens.google/</a>
+      </div></div><div class="tool-card"><div class="sno">27</div><div class="logo-wrap"><div class="tool-logo" style="background:#4285F422;">💻</div></div><div>
+        <div class="tool-title-row"><h3>Google Colab</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Browser me chalne wala Jupyter notebook jisme free GPU/TPU bhi milta hai. Machine learning aur data analysis ke liye popular.</p>
+        <a class="visit-link" href="https://colab.research.google.com/" target="_blank" rel="noopener">https://colab.research.google.com/</a>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="company" id="meta">
+    <div class="company-head">
+      <div class="icon-badge" style="background:#0866FF;">M</div>
+      <div>
+        <h2>Meta AI Tools</h2>
+        <p class="sub">Meta AI app, Muse Spark, Llama, SAM aur AI glasses</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="tool-card"><div class="sno">1</div><div class="logo-wrap"><div class="tool-logo" style="background:#0866FF22;">💬</div></div><div>
+        <div class="tool-title-row"><h3>Meta AI (Assistant)</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">WhatsApp, Instagram, Facebook, Messenger aur meta.ai app/website par free AI assistant. Chat, image generation aur content ideas sab kuch. April 2026 se Meta AI app aur website Muse Spark model par chalte hai.</p>
+        <a class="visit-link" href="https://www.meta.ai/" target="_blank" rel="noopener">https://www.meta.ai/</a>
+      </div></div><div class="tool-card"><div class="sno">2</div><div class="logo-wrap"><div class="tool-logo" style="background:#0866FF22;">⚡</div></div><div>
+        <div class="tool-title-row"><h3>Muse Spark</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Meta Superintelligence Labs ka pehla model (April 2026), jo ab Meta AI app ko power karta hai. Multimodal reasoning, health aur shopping jaise use cases ke liye. Ye closed model hai, developers modify nahi kar sakte.</p>
+        <a class="visit-link" href="https://ai.meta.com/blog/introducing-muse-spark-msl/" target="_blank" rel="noopener">https://ai.meta.com/blog/introducing-muse-spark-msl/</a>
+      </div></div><div class="tool-card"><div class="sno">3</div><div class="logo-wrap"><div class="tool-logo" style="background:#0866FF22;">🦙</div></div><div>
+        <div class="tool-title-row"><h3>Llama (Model Family)</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Meta ka open-weight LLM family jise developers free me download, modify aur fine-tune kar sakte hai apni apps ke liye.</p>
+        <a class="visit-link" href="https://www.llama.com/" target="_blank" rel="noopener">https://www.llama.com/</a>
+      </div></div><div class="tool-card"><div class="sno">4</div><div class="logo-wrap"><div class="tool-logo" style="background:#0866FF22;">🤖</div></div><div>
+        <div class="tool-title-row"><h3>Meta AI Studio</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Creators aur businesses apne fans ke liye custom AI characters aur chatbots bana sakte hai, jo Instagram, Messenger aur WhatsApp par chalte hai.</p>
+        <a class="visit-link" href="https://ai.meta.com/ai-studio/" target="_blank" rel="noopener">https://ai.meta.com/ai-studio/</a>
+      </div></div><div class="tool-card"><div class="sno">5</div><div class="logo-wrap"><div class="tool-logo" style="background:#0866FF22;">✂️</div></div><div>
+        <div class="tool-title-row"><h3>Segment Anything Model 3 (SAM 3)</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Images aur videos me kisi bhi object ko text ya click se detect, segment aur track karta hai. Playground me try kar sakte ho aur model open available hai.</p>
+        <a class="visit-link" href="https://ai.meta.com/sam3/" target="_blank" rel="noopener">https://ai.meta.com/sam3/</a>
+      </div></div><div class="tool-card"><div class="sno">6</div><div class="logo-wrap"><div class="tool-logo" style="background:#0866FF22;">🔊</div></div><div>
+        <div class="tool-title-row"><h3>SAM Audio</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Kisi bhi audio ya video me se ek specific sound (jaise sirf gitar ya kutte ki awaaz) text ya click se alag kar deta hai. Sound generation nahi, audio separation ka model hai.</p>
+        <a class="visit-link" href="https://ai.meta.com/samaudio/" target="_blank" rel="noopener">https://ai.meta.com/samaudio/</a>
+      </div></div><div class="tool-card"><div class="sno">7</div><div class="logo-wrap"><div class="tool-logo" style="background:#0866FF22;">👓</div></div><div>
+        <div class="tool-title-row"><h3>Meta AI Glasses (Ray-Ban, Oakley, Display)</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">AI-powered smart glasses jinme hands-free voice assistant, photo/video capture aur real-time answers milte hai. Ray-Ban Meta, Oakley Meta aur in-lens display wali Meta Ray-Ban Display range available hai.</p>
+        <a class="visit-link" href="https://www.meta.com/ai-glasses/" target="_blank" rel="noopener">https://www.meta.com/ai-glasses/</a>
+      </div></div><div class="tool-card"><div class="sno">8</div><div class="logo-wrap"><div class="tool-logo" style="background:#0866FF22;">💼</div></div><div>
+        <div class="tool-title-row"><h3>WhatsApp Business AI</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Businesses ke liye WhatsApp par AI se customer queries ka automatic jawab dene aur sales me madad karne wala tool.</p>
+        <a class="visit-link" href="https://business.whatsapp.com/" target="_blank" rel="noopener">https://business.whatsapp.com/</a>
+      </div></div><div class="tool-card"><div class="sno">9</div><div class="logo-wrap"><div class="tool-logo" style="background:#0866FF22;">🧠</div></div><div>
+        <div class="tool-title-row"><h3>Muse (Personal AI Agent)</h3><span class="pill tag-freemium">FREEMIUM</span><span class="pill tag-new">NEW</span></div>
+        <p class="feat">Meta's personal AI agent, launched on September 8, 2026 and powered by the Muse Spark model. Give it a goal and it plans the work, then carries it out on its own cloud computer: sending emails, booking travel, filling forms and making purchases, even after you close the app. It connects to your apps such as email, calendar, payments and shopping, and asks for your approval before sensitive actions. Available through its own app and WhatsApp, currently US-first. A free tier is available, with paid plans at $20 and $100 per month.</p>
+        <a class="visit-link" href="https://ai.meta.com/muse/" target="_blank" rel="noopener">https://ai.meta.com/muse/</a>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="company" id="openai">
+    <div class="company-head">
+      <div class="icon-badge" style="background:#000000;">◎</div>
+      <div>
+        <h2>OpenAI Tools</h2>
+        <p class="sub">ChatGPT, ChatGPT Work, Codex aur GPT-5.6 model family</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="tool-card"><div class="sno">1</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">💬</div></div><div>
+        <div class="tool-title-row"><h3>ChatGPT</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Duniya ka sabse popular AI chatbot — text, voice, image, file upload, memory aur custom GPTs. Free tier limited hai, Plus/Pro/Business plans me advanced models aur zyada usage milta hai. Ab desktop app me Chat, Work aur Codex teeno ek jagah hai.</p>
+        <a class="visit-link" href="https://chatgpt.com/" target="_blank" rel="noopener">https://chatgpt.com/</a>
+      </div></div><div class="tool-card"><div class="sno">2</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">🧑‍💼</div></div><div>
+        <div class="tool-title-row"><h3>ChatGPT Work</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">July 2026 me aaya agent mode jo GPT-5.6 par chalta hai. Apps aur files se context leke documents, spreadsheets, presentations aur web apps (Sites) bana deta hai, ghanto tak chalne wale tasks aur Scheduled Tasks ke saath. ChatGPT ke andar milta hai.</p>
+        <a class="visit-link" href="https://chatgpt.com/" target="_blank" rel="noopener">https://chatgpt.com/</a>
+      </div></div><div class="tool-card"><div class="sno">3</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">💻</div></div><div>
+        <div class="tool-title-row"><h3>Codex</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">OpenAI ka AI coding agent jo code likhta hai, bugs fix karta hai aur pull requests banata hai. Ab ChatGPT desktop app me merge ho chuka hai aur non-coding kaam ke liye bhi use hota hai.</p>
+        <a class="visit-link" href="https://openai.com/codex/" target="_blank" rel="noopener">https://openai.com/codex/</a>
+      </div></div><div class="tool-card"><div class="sno">4</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">🔌</div></div><div>
+        <div class="tool-title-row"><h3>OpenAI API Platform (GPT-5.6)</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Developers ke liye API — GPT-5.6 jaise models apni apps me use karo, pay-per-use pricing ke saath.</p>
+        <a class="visit-link" href="https://platform.openai.com/" target="_blank" rel="noopener">https://platform.openai.com/</a>
+      </div></div><div class="tool-card"><div class="sno">5</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">🎙️</div></div><div>
+        <div class="tool-title-row"><h3>GPT-Live (Voice)</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">ChatGPT ka full-duplex voice mode jisme tum beech me bol sakte ho aur AI natural conversation ki tarah jawab deta hai. ChatGPT app ke andar milta hai.</p>
+        <a class="visit-link" href="https://chatgpt.com/" target="_blank" rel="noopener">https://chatgpt.com/</a>
+      </div></div><div class="tool-card"><div class="sno">6</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">🩺</div></div><div>
+        <div class="tool-title-row"><h3>Health in ChatGPT</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">ChatGPT ke andar health se jude sawalon ke liye personal health companion feature (July 2026). Medical advice ka substitute nahi hai.</p>
+        <a class="visit-link" href="https://chatgpt.com/" target="_blank" rel="noopener">https://chatgpt.com/</a>
+      </div></div><div class="tool-card"><div class="sno">7</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">🖼️</div></div><div>
+        <div class="tool-title-row"><h3>ChatGPT Images (GPT Image)</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">ChatGPT ke andar built-in image generation aur editing — natural language prompts se images banao ya edit karo.</p>
+        <a class="visit-link" href="https://openai.com/index/introducing-4o-image-generation/" target="_blank" rel="noopener">https://openai.com/index/introducing-4o-image-generation/</a>
+      </div></div><div class="tool-card"><div class="sno">8</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">🔬</div></div><div>
+        <div class="tool-title-row"><h3>Deep Research</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Multi-source agentic research mode jo internet se kai sources dekh kar detailed cited report banata hai.</p>
+        <a class="visit-link" href="https://openai.com/index/introducing-deep-research/" target="_blank" rel="noopener">https://openai.com/index/introducing-deep-research/</a>
+      </div></div><div class="tool-card"><div class="sno">9</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">🔎</div></div><div>
+        <div class="tool-title-row"><h3>ChatGPT Search</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">ChatGPT ke andar hi web se latest information laa kar sources ke saath jawab deta hai.</p>
+        <a class="visit-link" href="https://openai.com/index/introducing-chatgpt-search/" target="_blank" rel="noopener">https://openai.com/index/introducing-chatgpt-search/</a>
+      </div></div><div class="tool-card"><div class="sno">10</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">🧩</div></div><div>
+        <div class="tool-title-row"><h3>Custom GPTs / GPT Store</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Bina coding ke apna specialized chatbot (GPT) banao aur GPT Store me publish karke doosron ke saath share karo.</p>
+        <a class="visit-link" href="https://chatgpt.com/gpts" target="_blank" rel="noopener">https://chatgpt.com/gpts</a>
+      </div></div><div class="tool-card"><div class="sno">11</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">📞</div></div><div>
+        <div class="tool-title-row"><h3>Realtime API</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Developers ke liye low-latency speech-to-speech API, voice assistants aur customer-service bots banane ke liye.</p>
+        <a class="visit-link" href="https://platform.openai.com/docs/guides/realtime" target="_blank" rel="noopener">https://platform.openai.com/docs/guides/realtime</a>
+      </div></div><div class="tool-card"><div class="sno">12</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">🎧</div></div><div>
+        <div class="tool-title-row"><h3>Whisper</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Open-source speech-to-text model jo audio recordings ko accurate text me convert karta hai. Free me download kar sakte ho.</p>
+        <a class="visit-link" href="https://github.com/openai/whisper" target="_blank" rel="noopener">https://github.com/openai/whisper</a>
+      </div></div><div class="tool-card"><div class="sno">13</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">🏢</div></div><div>
+        <div class="tool-title-row"><h3>ChatGPT Enterprise / Edu</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Organizations aur schools ke liye enterprise-grade security aur admin controls ke saath ChatGPT.</p>
+        <a class="visit-link" href="https://openai.com/chatgpt/enterprise/" target="_blank" rel="noopener">https://openai.com/chatgpt/enterprise/</a>
+      </div></div><div class="tool-card"><div class="sno">14</div><div class="logo-wrap"><div class="tool-logo" style="background:#00000022;">🔵</div></div><div>
+        <div class="tool-title-row"><h3>Dots (Always-On Agents)</h3><span class="pill tag-paid">PAID</span><span class="pill tag-new">NEW</span></div>
+        <p class="feat">OpenAI's always-on personal agents, announced at DevDay on September 29, 2026 and powered by GPT-6 Astra. Each Dot gets its own cloud computer and browser and keeps working toward your goals in the background. It connects to thousands of apps through ChatGPT plugins and can be reached from ChatGPT, Slack and Microsoft Teams. You set rules for what it may do automatically and what needs your approval. Currently included with ChatGPT Pro and Business Premium in eligible markets.</p>
+        <a class="visit-link" href="https://openai.com/index/introducing-dots/" target="_blank" rel="noopener">https://openai.com/index/introducing-dots/</a>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="company" id="anthropic">
+    <div class="company-head">
+      <div class="icon-badge" style="background:#D97757;">A</div>
+      <div>
+        <h2>Anthropic Tools (Claude)</h2>
+        <p class="sub">Claude chat, Claude Code, Cowork aur Office/Chrome/Slack integrations</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="tool-card"><div class="sno">1</div><div class="logo-wrap"><div class="tool-logo" style="background:#D9775722;">💬</div></div><div>
+        <div class="tool-title-row"><h3>Claude (Chat)</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Claude models ke saath web, mobile aur desktop app me chat. Free tier available hai, Pro/Max plans me zyada usage aur advanced models milte hai. Chat ke andar hi documents, code aur webpages (Artifacts) bhi ban jate hai.</p>
+        <a class="visit-link" href="https://claude.ai/" target="_blank" rel="noopener">https://claude.ai/</a>
+      </div></div><div class="tool-card"><div class="sno">2</div><div class="logo-wrap"><div class="tool-logo" style="background:#D9775722;">💳</div></div><div>
+        <div class="tool-title-row"><h3>Claude Plans and Pricing</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Pro, Max, Team aur Enterprise plans ki poori jaankari aur pricing, jisme zyada usage limits aur extra features milte hai.</p>
+        <a class="visit-link" href="https://claude.com/pricing" target="_blank" rel="noopener">https://claude.com/pricing</a>
+      </div></div><div class="tool-card"><div class="sno">3</div><div class="logo-wrap"><div class="tool-logo" style="background:#D9775722;">💻</div></div><div>
+        <div class="tool-title-row"><h3>Claude Code</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Agentic coding tool — terminal, desktop app ya mobile se poore coding tasks (bug fix, new feature, refactoring) Claude ko delegate karo.</p>
+        <a class="visit-link" href="https://claude.com/product/claude-code" target="_blank" rel="noopener">https://claude.com/product/claude-code</a>
+      </div></div><div class="tool-card"><div class="sno">4</div><div class="logo-wrap"><div class="tool-logo" style="background:#D9775722;">🗂️</div></div><div>
+        <div class="tool-title-row"><h3>Claude Cowork</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Non-coders ke liye desktop par agentic workspace. Claude tumhari local files padhta aur edit karta hai, aur spreadsheets, presentations aur documents jaise polished outputs banata hai.</p>
+        <a class="visit-link" href="https://claude.com/product/cowork" target="_blank" rel="noopener">https://claude.com/product/cowork</a>
+      </div></div><div class="tool-card"><div class="sno">5</div><div class="logo-wrap"><div class="tool-logo" style="background:#D9775722;">🌐</div></div><div>
+        <div class="tool-title-row"><h3>Claude for Chrome</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Browser extension jo tumhari taraf se websites par navigate karke research aur repetitive web tasks complete karta hai.</p>
+        <a class="visit-link" href="https://claude.com/claude-for-chrome" target="_blank" rel="noopener">https://claude.com/claude-for-chrome</a>
+      </div></div><div class="tool-card"><div class="sno">6</div><div class="logo-wrap"><div class="tool-logo" style="background:#D9775722;">📊</div></div><div>
+        <div class="tool-title-row"><h3>Claude for Microsoft 365 (Excel, PowerPoint, Word)</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Office apps ke andar Claude — Excel me formulas aur data cleanup, PowerPoint me slides aur Word me drafting, seedha app ke andar hi.</p>
+        <a class="visit-link" href="https://claude.com/claude-for-microsoft-365" target="_blank" rel="noopener">https://claude.com/claude-for-microsoft-365</a>
+      </div></div><div class="tool-card"><div class="sno">7</div><div class="logo-wrap"><div class="tool-logo" style="background:#D9775722;">💬</div></div><div>
+        <div class="tool-title-row"><h3>Claude for Slack (@Claude)</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Slack me kisi bhi message ya thread me @Claude tag karke kaam delegate karo, team ke liye shared AI teammate ki tarah.</p>
+        <a class="visit-link" href="https://claude.com/claude-for-slack" target="_blank" rel="noopener">https://claude.com/claude-for-slack</a>
+      </div></div><div class="tool-card"><div class="sno">8</div><div class="logo-wrap"><div class="tool-logo" style="background:#D9775722;">🧠</div></div><div>
+        <div class="tool-title-row"><h3>Claude Skills</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Claude ko apne kaam karne ka tareeka sikhao — reusable instructions (skills) jo Claude relevant tasks par khud use karta hai.</p>
+        <a class="visit-link" href="https://claude.com/skills" target="_blank" rel="noopener">https://claude.com/skills</a>
+      </div></div><div class="tool-card"><div class="sno">9</div><div class="logo-wrap"><div class="tool-logo" style="background:#D9775722;">🛡️</div></div><div>
+        <div class="tool-title-row"><h3>Claude Security</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Security teams ke liye Claude-powered product, code aur systems me vulnerabilities dhoondne aur fix karne me madad ke liye.</p>
+        <a class="visit-link" href="https://claude.com/product/claude-security" target="_blank" rel="noopener">https://claude.com/product/claude-security</a>
+      </div></div><div class="tool-card"><div class="sno">10</div><div class="logo-wrap"><div class="tool-logo" style="background:#D9775722;">🔌</div></div><div>
+        <div class="tool-title-row"><h3>Claude Platform and API</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Developers ke liye API aur developer platform — apni apps me Claude integrate karo, usage-based pricing ke saath. Docs platform.claude.com par hai.</p>
+        <a class="visit-link" href="https://claude.com/platform/api" target="_blank" rel="noopener">https://claude.com/platform/api</a>
+      </div></div><div class="tool-card"><div class="sno">11</div><div class="logo-wrap"><div class="tool-logo" style="background:#D9775722;">🔗</div></div><div>
+        <div class="tool-title-row"><h3>Model Context Protocol (MCP)</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Open standard jo Claude aur baaki AI apps ko external tools, apps aur data sources (Drive, Slack, GitHub etc.) se connect karta hai.</p>
+        <a class="visit-link" href="https://modelcontextprotocol.io/" target="_blank" rel="noopener">https://modelcontextprotocol.io/</a>
+      </div></div><div class="tool-card"><div class="sno">12</div><div class="logo-wrap"><div class="tool-logo" style="background:#D9775722;">🏢</div></div><div>
+        <div class="tool-title-row"><h3>Claude for Enterprise</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Bade organizations ke liye admin controls, security aur bulk deployment ke saath Claude. Sales team se contact karna hota hai.</p>
+        <a class="visit-link" href="https://claude.com/contact-sales" target="_blank" rel="noopener">https://claude.com/contact-sales</a>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="company" id="microsoft">
+    <div class="company-head">
+      <div class="icon-badge" style="background:#059669;">C</div>
+      <div>
+        <h2>Microsoft Tools</h2>
+        <p class="sub">Copilot ecosystem aur Microsoft Foundry</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="tool-card"><div class="sno">1</div><div class="logo-wrap"><div class="tool-logo" style="background:#05966922;">💬</div></div><div>
+        <div class="tool-title-row"><h3>Microsoft Copilot</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Windows, Edge aur web me built-in AI assistant — chat, image generation aur search sab ek jagah.</p>
+        <a class="visit-link" href="https://copilot.microsoft.com/" target="_blank" rel="noopener">https://copilot.microsoft.com/</a>
+      </div></div><div class="tool-card"><div class="sno">2</div><div class="logo-wrap"><div class="tool-logo" style="background:#05966922;">📊</div></div><div>
+        <div class="tool-title-row"><h3>Microsoft 365 Copilot</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Word, Excel, PowerPoint, Outlook aur Teams ke andar AI drafting, data analysis aur meeting summaries.</p>
+        <a class="visit-link" href="https://www.microsoft.com/microsoft-365/copilot" target="_blank" rel="noopener">https://www.microsoft.com/microsoft-365/copilot</a>
+      </div></div><div class="tool-card"><div class="sno">3</div><div class="logo-wrap"><div class="tool-logo" style="background:#05966922;">💻</div></div><div>
+        <div class="tool-title-row"><h3>GitHub Copilot</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">AI coding assistant jo VS Code aur JetBrains jaise editors me code suggestions aur agent mode deta hai.</p>
+        <a class="visit-link" href="https://github.com/features/copilot" target="_blank" rel="noopener">https://github.com/features/copilot</a>
+      </div></div><div class="tool-card"><div class="sno">4</div><div class="logo-wrap"><div class="tool-logo" style="background:#05966922;">🧩</div></div><div>
+        <div class="tool-title-row"><h3>Copilot Studio</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">No-code platform jisse businesses apne custom AI agents aur chatbots bana sakte hai.</p>
+        <a class="visit-link" href="https://www.microsoft.com/microsoft-copilot/microsoft-copilot-studio" target="_blank" rel="noopener">https://www.microsoft.com/microsoft-copilot/microsoft-copilot-studio</a>
+      </div></div><div class="tool-card"><div class="sno">5</div><div class="logo-wrap"><div class="tool-logo" style="background:#05966922;">☁️</div></div><div>
+        <div class="tool-title-row"><h3>Microsoft Foundry (pehle Azure AI Foundry)</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Enterprises ke liye AI apps aur agents build aur deploy karne ka platform, jisme OpenAI, Anthropic aur baaki kai models available hai. Naam Azure AI Foundry se badal kar Microsoft Foundry ho gaya hai.</p>
+        <a class="visit-link" href="https://ai.azure.com/" target="_blank" rel="noopener">https://ai.azure.com/</a>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="company" id="others">
+    <div class="company-head">
+      <div class="icon-badge" style="background:#7c3aed;">+</div>
+      <div>
+        <h2>Baaki Major AI Players</h2>
+        <p class="sub">xAI, Perplexity, Mistral, Midjourney, DeepSeek, Adobe aur bhi bahut kuch</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="tool-card"><div class="sno">1</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🤖</div></div><div>
+        <div class="tool-title-row"><h3>Grok (xAI)</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Elon Musk ki company xAI ka chatbot, X (Twitter) me integrated aur real-time trending information ke saath.</p>
+        <a class="visit-link" href="https://grok.com/" target="_blank" rel="noopener">https://grok.com/</a>
+      </div></div><div class="tool-card"><div class="sno">2</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🔎</div></div><div>
+        <div class="tool-title-row"><h3>Perplexity AI</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">AI search engine jo har jawab ke saath sources deta hai, research aur fact-checking ke liye popular.</p>
+        <a class="visit-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">https://www.perplexity.ai/</a>
+      </div></div><div class="tool-card"><div class="sno">3</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🧭</div></div><div>
+        <div class="tool-title-row"><h3>Perplexity Comet</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Perplexity ka AI-native browser jo research-heavy browsing aur summarization ke liye banaya gaya hai.</p>
+        <a class="visit-link" href="https://www.perplexity.ai/comet" target="_blank" rel="noopener">https://www.perplexity.ai/comet</a>
+      </div></div><div class="tool-card"><div class="sno">4</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">💬</div></div><div>
+        <div class="tool-title-row"><h3>Mistral Le Chat</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">French AI lab Mistral ka chatbot. Company open-weight models bhi developers ke liye deti hai.</p>
+        <a class="visit-link" href="https://chat.mistral.ai/" target="_blank" rel="noopener">https://chat.mistral.ai/</a>
+      </div></div><div class="tool-card"><div class="sno">5</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🎨</div></div><div>
+        <div class="tool-title-row"><h3>Midjourney</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Artistic aur photorealistic AI images ke liye sabse popular tools me se ek, designers me bahut favorite.</p>
+        <a class="visit-link" href="https://www.midjourney.com/" target="_blank" rel="noopener">https://www.midjourney.com/</a>
+      </div></div><div class="tool-card"><div class="sno">6</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🐳</div></div><div>
+        <div class="tool-title-row"><h3>DeepSeek</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Chinese AI lab ka chatbot aur open-weight models, low-cost alternative ke roop me famous.</p>
+        <a class="visit-link" href="https://chat.deepseek.com/" target="_blank" rel="noopener">https://chat.deepseek.com/</a>
+      </div></div><div class="tool-card"><div class="sno">7</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🎨</div></div><div>
+        <div class="tool-title-row"><h3>Adobe Firefly</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Adobe ka AI image, video aur design generation tool, Photoshop jaise Creative Cloud apps me integrated.</p>
+        <a class="visit-link" href="https://firefly.adobe.com/" target="_blank" rel="noopener">https://firefly.adobe.com/</a>
+      </div></div><div class="tool-card"><div class="sno">8</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🎥</div></div><div>
+        <div class="tool-title-row"><h3>Runway</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">AI video generation aur editing ka professional tool, filmmakers aur creators ke liye.</p>
+        <a class="visit-link" href="https://runwayml.com/" target="_blank" rel="noopener">https://runwayml.com/</a>
+      </div></div><div class="tool-card"><div class="sno">9</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🎙️</div></div><div>
+        <div class="tool-title-row"><h3>ElevenLabs</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Realistic AI voice generation aur voice cloning, kai languages me text-to-speech.</p>
+        <a class="visit-link" href="https://elevenlabs.io/" target="_blank" rel="noopener">https://elevenlabs.io/</a>
+      </div></div><div class="tool-card"><div class="sno">10</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🎵</div></div><div>
+        <div class="tool-title-row"><h3>Suno</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Text prompt se poore gaane (lyrics, music aur vocals) generate karta hai.</p>
+        <a class="visit-link" href="https://suno.com/" target="_blank" rel="noopener">https://suno.com/</a>
+      </div></div><div class="tool-card"><div class="sno">11</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🎭</div></div><div>
+        <div class="tool-title-row"><h3>Character.AI</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Custom AI characters ke saath chat aur roleplay ka platform, entertainment aur creative writing ke liye.</p>
+        <a class="visit-link" href="https://character.ai/" target="_blank" rel="noopener">https://character.ai/</a>
+      </div></div><div class="tool-card"><div class="sno">12</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">☁️</div></div><div>
+        <div class="tool-title-row"><h3>Amazon Bedrock</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">AWS ka platform jisme Claude, Llama jaise kai AI models ek hi jagah se access aur deploy hote hai.</p>
+        <a class="visit-link" href="https://aws.amazon.com/bedrock/" target="_blank" rel="noopener">https://aws.amazon.com/bedrock/</a>
+      </div></div><div class="tool-card"><div class="sno">13</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">✍️</div></div><div>
+        <div class="tool-title-row"><h3>Ideogram</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">AI image generation jo images ke andar accurate readable text banane me achha mana jata hai, logos aur posters ke liye.</p>
+        <a class="visit-link" href="https://ideogram.ai/" target="_blank" rel="noopener">https://ideogram.ai/</a>
+      </div></div><div class="tool-card"><div class="sno">14</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🖼️</div></div><div>
+        <div class="tool-title-row"><h3>Stability AI (Stable Diffusion)</h3><span class="pill tag-free">FREE</span></div>
+        <p class="feat">Open-source image generation model family jise koi bhi free me download aur customize kar sakta hai.</p>
+        <a class="visit-link" href="https://stability.ai/" target="_blank" rel="noopener">https://stability.ai/</a>
+      </div></div><div class="tool-card"><div class="sno">15</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🏢</div></div><div>
+        <div class="tool-title-row"><h3>Cohere</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Enterprise-focused LLM API, businesses ke liye custom AI solutions par focus.</p>
+        <a class="visit-link" href="https://cohere.com/" target="_blank" rel="noopener">https://cohere.com/</a>
+      </div></div><div class="tool-card"><div class="sno">16</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🤗</div></div><div>
+        <div class="tool-title-row"><h3>Hugging Face</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Open-source AI models aur datasets ka sabse bada hub, developers yahan se free models download aur share karte hai.</p>
+        <a class="visit-link" href="https://huggingface.co/" target="_blank" rel="noopener">https://huggingface.co/</a>
+      </div></div><div class="tool-card"><div class="sno">17</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">🎨</div></div><div>
+        <div class="tool-title-row"><h3>Canva Magic Studio</h3><span class="pill tag-freemium">FREEMIUM</span></div>
+        <p class="feat">Canva ke andar AI design, image generation aur video editing tools ka suite.</p>
+        <a class="visit-link" href="https://www.canva.com/magic-studio/" target="_blank" rel="noopener">https://www.canva.com/magic-studio/</a>
+      </div></div><div class="tool-card"><div class="sno">18</div><div class="logo-wrap"><div class="tool-logo" style="background:#7c3aed22;">📝</div></div><div>
+        <div class="tool-title-row"><h3>Notion AI</h3><span class="pill tag-paid">PAID</span></div>
+        <p class="feat">Notion workspace ke andar AI writing, summarizing aur Q and A.</p>
+        <a class="visit-link" href="https://www.notion.com/product/ai" target="_blank" rel="noopener">https://www.notion.com/product/ai</a>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="company" id="discontinued">
+    <div class="company-head">
+      <div class="icon-badge" style="background:#6b7280;">✖</div>
+      <div>
+        <h2>Ab Band Ho Chuke Tools</h2>
+        <p class="sub">Ye tools ab available nahi hai, isliye upar list me nahi daale gaye</p>
+      </div>
+    </div>
+    <ul class="disc-list"><li><strong>Sora (OpenAI)</strong> — App April 2026 me band hua, API 24 September 2026 ko band</li><li><strong>Operator (OpenAI)</strong> — 2025 me band hua, ChatGPT agent me merge hua; ChatGPT agent bhi ab hataya ja chuka hai, uski jagah ChatGPT Work hai</li><li><strong>Whisk aur ImageFX (Google)</strong> — 30 April 2026 ko band, ab Flow me merge</li><li><strong>Project Mariner (Google)</strong> — 4 May 2026 ko band, technology Gemini ke agent features me gayi</li><li><strong>MusicFX (Google)</strong> — 31 July 2026 ko band, ab Flow Music hai</li><li><strong>Firebase Studio (Google)</strong> — Naye signups band, 22 March 2027 ko poori tarah band hoga</li><li><strong>Audiobox demo (Meta)</strong> — Demo February 2026 se available nahi</li></ul>
+  </section>
+
+  <footer>
+    <p>Note: Pricing/features Sept 2026 tak ki jaankari par based hai — companies apne plans regularly update karti hai, current details ke liye official website check kare. Har tool ke saath dikhaya gaya icon sirf ek visual pehchaan ke liye hai (asli company logos trademark hone ki wajah se use nahi kiye gaye hai).</p>
+    <div class="creator-credit">
+      <img id="creatorImg" src="data:image/jpeg;base64,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" alt="Devendra Kashyap">
+      <span>Created by Devendra Kashyap</span>
+    </div>
+    <p class="thanks">Thank you for visiting! If this directory helped you, please share it with friends and classmates. 🙏</p>
+  </footer>
+</main>
+
+</div>
+
+<script>
+(function(){
+  var FREE_ACCESS = true; // true = password nahi lagega | 2 din baad false kar dena
+  var CORRECT_PASSWORD = "unlock2026";
+  var STORAGE_KEY = "ai_tools_directory_unlocked";
+  var overlay = document.getElementById('lockOverlay');
+  var lockedContent = document.getElementById('lockedContent');
+  var form = document.getElementById('lockForm');
+  var input = document.getElementById('lockPassword');
+  var errorEl = document.getElementById('lockError');
+
+  function unlock(){
+    overlay.style.display = 'none';
+    lockedContent.classList.remove('locked-blur');
+    if (!FREE_ACCESS) { try { localStorage.setItem(STORAGE_KEY, '1'); } catch(e){} }
+  }
+
+  if (FREE_ACCESS) { unlock(); }
+  else try {
+    if (localStorage.getItem(STORAGE_KEY) === '1') {
+      unlock();
+    }
+  } catch(e){}
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (input.value.trim() === CORRECT_PASSWORD) {
+      unlock();
+    } else {
+      errorEl.textContent = "Galat password. Dobara try karein.";
+      input.value = '';
+      input.focus();
+    }
+  });
+})();
+</script>
+
+
+<button id="top" aria-label="Back to top">↑</button>
+<script>
+(function(){
+document.documentElement.classList.add('js');
+var cards=[].slice.call(document.querySelectorAll('.tool-card')),secs=[].slice.call(document.querySelectorAll('section.company'));
+var q=document.getElementById('q'),shown=document.getElementById('shown'),empty=document.getElementById('empty'),f='all';
+cards.forEach(function(c,i){c.classList.add('reveal');c.style.transitionDelay=(i%4)*60+'ms';
+ c.dataset.p=(c.querySelector('.pill').className.match(/tag-(\w+)/)||[])[1];c.dataset.t=c.textContent.toLowerCase();});
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.08});cards.forEach(function(c){io.observe(c);});}else{cards.forEach(function(c){c.classList.add('in');});}
+function apply(){var t=q.value.trim().toLowerCase(),n=0;
+ cards.forEach(function(c){var ok=(f==='all'||c.dataset.p===f)&&(!t||c.dataset.t.indexOf(t)>-1);c.style.display=ok?'':'none';if(ok){n++;c.classList.add('in');}});
+ secs.forEach(function(s){var v=[].some.call(s.querySelectorAll('.tool-card'),function(c){return c.style.display!=='none';});s.style.display=v||!s.querySelector('.tool-card')?'':'none';});
+ shown.textContent='Showing '+n+' of '+cards.length+' tools';empty.style.display=n?'none':'block';}
+q.addEventListener('input',apply);
+[].forEach.call(document.querySelectorAll('.chip'),function(b){b.addEventListener('click',function(){f=b.dataset.f;[].forEach.call(document.querySelectorAll('.chip'),function(x){x.classList.toggle('on',x===b);});apply();});});
+apply();
+var cnt=document.querySelector('.count'),total=cards.length;
+if(cnt&&!matchMedia('(prefers-reduced-motion:reduce)').matches){var st=null;(function step(ts){st=st||ts;var p=Math.min((ts-st)/1400,1);cnt.textContent='Total '+Math.round(total*(1-Math.pow(1-p,3)))+' verified AI Tools Listed';if(p<1)requestAnimationFrame(step);})(performance.now());}
+var bar=document.getElementById('progress'),top=document.getElementById('top');
+addEventListener('scroll',function(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?h.scrollTop/m*100:0)+'%';top.classList.toggle('on',h.scrollTop>600);},{passive:true});
+top.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+
+<script>
+(function(){
+var root=document.documentElement,intro=document.getElementById('intro');
+if(!intro)return;
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){intro.className='gone';root.classList.add('ready');return;}
+root.classList.add('intro-on');
+var bar=document.getElementById('bar'),pct=document.getElementById('pct'),T=3300,t0=performance.now(),done=false;
+(function tick(n){var p=Math.min((n-t0)/T,1),e=1-Math.pow(1-p,2.2);bar.style.width=e*100+'%';pct.textContent=Math.round(e*100)+'%';if(p<1&&!done)requestAnimationFrame(tick);})(t0);
+function finish(){if(done)return;done=true;intro.classList.add('leave');setTimeout(function(){root.classList.remove('intro-on');root.classList.add('ready');},250);setTimeout(function(){intro.classList.add('gone');},900);}
+document.getElementById('skip').addEventListener('click',finish);
+setTimeout(finish,T+300);
+document.addEventListener('mousemove',function(e){var t=e.target.closest&&e.target.closest('.tool-card');if(!t)return;var r=t.getBoundingClientRect();t.style.setProperty('--mx',e.clientX-r.left+'px');t.style.setProperty('--my',e.clientY-r.top+'px');});
+})();
+</script>
+</body>
+</html>
